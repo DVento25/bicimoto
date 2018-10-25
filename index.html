@@ -17,7 +17,7 @@
             <option value="2">Mineral</option>
         </select><br>
         <input type="button" value="Calcular" id="btnCalcular" name="btnCalcular"><br>
-        <input type="text" id="txtResultado" name="txtResultado" placeholder="Resultado">
+        <input type="text" id="txtResultado" name="txtResultado" placeholder="Resultado" disabled>
     </form>
 
     <script src="jquery-3.1.1.min.js"></script>
@@ -29,16 +29,16 @@
                 let tipo = $("#btnAceite").val();
                 if (tipo == 1){
                     aceite = (gasolina*160)/3.7;
-                    alert(aceite);
-                    getElementById("txtResultado").value = parseFloat(aceite);
+                    document.getElementById('txtResultado').value = aceite;
                 }
                 if(tipo == 2){
                     aceite = (gasolina*230)/3.7;
-                    // $("#txtResultado").val() = aceite;
+                    document.getElementById('txtResultado').value = aceite;
                 }
-                // if(tipo == 0){
-                //     $("#txtResultado").val() = "Error";
-                // }
+                if(tipo == 0){
+                    aceite = "Error";
+                    document.getElementById('txtResultado').value = aceite;
+                }
               
             });
         });
