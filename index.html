@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bicimoto</h1>
+    <h2>Conbinacion aceite con gasolina</h2>
+    <form action="" method="post">
+        <input type="number" id="btnGasolina" name="btnGasolina" placeholder="Gasolina en litros"> El galon es 3.7 litros<br>
+        <select name="btnAceite" id="btnAceite">
+            <option value="0">Seleccionar</option>
+            <option value="1">Sintetico</option>
+            <option value="2">Mineral</option>
+        </select><br>
+        <input type="button" value="Calcular" id="btnCalcular" name="btnCalcular"><br>
+        <input type="text" id="txtResultado" name="txtResultado" placeholder="Resultado">
+    </form>
+
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btnCalcular").click(function(){
+                let aceite;
+                let gasolina = $("#btnGasolina").val();
+                let tipo = $("#btnAceite").val();
+                if (tipo == 1){
+                    aceite = (gasolina*160)/3.7;
+                    alert(aceite);
+                    getElementById("txtResultado").value = parseFloat(aceite);
+                }
+                if(tipo == 2){
+                    aceite = (gasolina*230)/3.7;
+                    // $("#txtResultado").val() = aceite;
+                }
+                // if(tipo == 0){
+                //     $("#txtResultado").val() = "Error";
+                // }
+              
+            });
+        });
+    </script>
+</body>
+</html>
