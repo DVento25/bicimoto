@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,8 @@
     <form action="" method="post">
         <input type="number" id="txtPrecioGaso" name="txtPrecioGaso" placeholder="Precio Gasolina 90"><br>
         <input type="number" name="txtCantLitros" id="txtCantLitros" placeholder="Cantidad de gasolina"><br>
-        <input type="number">
+        <input type="button" value="Calcular" id="btnPrecio"><br>
+        <input type="number" id="txtPrecio" name="txtPrecio" placeholder="Precio Total">
         <input type="number" id="btnGasolina" name="btnGasolina" placeholder="Gasolina en litros"> El galon es 3.7 litros<br>
         <select name="btnAceite" id="btnAceite">
             <option value="0">Seleccionar</option>
@@ -26,6 +27,10 @@
     <script src="jquery-3.1.1.min.js"></script>
     <script>
         $(document).ready(function(){
+            $("#btnPrecio").click(function(){
+                
+            });
+
             $("#btnCalcular").click(function(){
                 let aceite;
                 let gasolina = $("#btnGasolina").val();
