@@ -5,30 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <h1>Bicimoto</h1>
-    <h2>Conbinacion aceite con gasolina</h2>
+    <h1>Bicimotos</h1>
     <form action="" method="post">
-        <input type="number" id="txtPrecioGaso" name="txtPrecioGaso" placeholder="Precio Gasolina 90"><br>
-        <input type="number" name="txtCantLitros" id="txtCantLitros" placeholder="Cantidad de gasolina"><br>
-        <input type="button" value="Calcular" id="btnPrecio"><br>
-        <input type="number" id="txtPrecio" name="txtPrecio" placeholder="Precio Total">
-        <input type="number" id="btnGasolina" name="btnGasolina" placeholder="Gasolina en litros"> El galon es 3.7 litros<br>
+        <h3>Calcular el precio total por litro de gasolina</h3>
+        <input type="number" id="txtPrecioGaso" name="txtPrecioGaso" placeholder="Precio Gasolina 90">
+        <input type="number" name="txtCantLitros" id="txtCantLitros" placeholder="Cantidad en litros">
+        <input type="button" value="Calcular" id="btnPrecio">
+        <input type="number" id="txtPrecio" name="txtPrecio" placeholder="Precio Total" disabled><br>
+        <h3>Calcular los litros de gasolina por el precio</h3>
+        <input type="number" id="txtSoles" name="txtSoles" placeholder="Cantidad en soles">
+        <input type="button" id="btnVer" name="btnVer" value="Calcular">
+        <input type="number" id="txtLitros" name="txtLitros" placeholder="Litros" disabled>
+        <br><br>
+        <h3>Calcular la cantidad de aceite por litro de gasolina</h3>
+        <input type="number" id="btnGasolina" name="btnGasolina" placeholder="Gasolina en litros"> El galon es 3.7 litros
         <select name="btnAceite" id="btnAceite">
             <option value="0">Seleccionar</option>
             <option value="1">Sintetico</option>
             <option value="2">Mineral</option>
         </select><br>
-        <input type="button" value="Calcular" id="btnCalcular" name="btnCalcular"><br>
-        <input type="text" id="txtResultado" name="txtResultado" placeholder="Resultado" disabled>
+        <input type="button" value="Calcular" id="btnCalcular" name="btnCalcular">
+        <input type="number" id="txtResultado" name="txtResultado" placeholder="Resultado" disabled>
     </form>
 
     <script src="jquery-3.1.1.min.js"></script>
     <script>
         $(document).ready(function(){
             $("#btnPrecio").click(function(){
-                
+                let total, precioGaso, cant;
+                precioGaso = $("#txtPrecioGaso").val();
+                cant = $("#txtCantLitros").val();
+                total = (precioGaso * cant) / 3.7;
+                document.getElementById('txtPrecio').value = total.toFixed(2);
+                document.getElementById('btnGasolina').value = cant;
+            });
+
+            $("#btnVer").click(function(){
+                let precioGaso, soles, total;
+                precioGaso = $("#txtPrecioGaso").val();
+                soles = $("#txtSoles").val();
+                total = (soles*3.7)/precioGaso;
+                document.getElementById('txtLitros').value = total.toFixed(2);
+                document.getElementById('btnGasolina').value = total.toFixed(2);
             });
 
             $("#btnCalcular").click(function(){
@@ -37,11 +58,11 @@
                 let tipo = $("#btnAceite").val();
                 if (tipo == 1){
                     aceite = (gasolina*160)/3.7;
-                    document.getElementById('txtResultado').value = aceite;
+                    document.getElementById('txtResultado').value = aceite.toFixed(2);
                 }
                 if(tipo == 2){
                     aceite = (gasolina*230)/3.7;
-                    document.getElementById('txtResultado').value = aceite;
+                    document.getElementById('txtResultado').value = aceite.toFixed(2);
                 }
                 if(tipo == 0){
                     aceite = "Error";

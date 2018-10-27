@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: gray;
+}
+h1{
+    text-align: center;
+}
+h3{
+    width: 95%;
+    text-align: center;
+}
+form{
+    width: 90%;
+    margin: auto;
+
+}
+#txtPrecioGaso, #txtCantLitros, #txtPrecio, #txtSoles, #txtLitros, #btnGasolina, #txtResultado{
+    text-align: center;
+    margin: auto;
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    display: block;
+    margin-top: 5px;
+    font-size: 17px;
+    font-weight: bold;
+}
+#txtResultado{
+    margin-bottom: 50px;
+}
+#btnPrecio, #btnVer, #btnCalcular{
+    text-align: center;
+    margin: auto;
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    display: block;  
+    margin-top: 10px;
+    background-color:steelblue;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;  
+}
+#btnAceite{
+    text-align: center; 
+    margin: auto;
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    display: block;
+    margin-top: 5px; 
+}
+#btnAceite option{
+    text-align: center;
+}
